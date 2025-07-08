@@ -1,14 +1,7 @@
 --
 PRE
 
-shadcn libs
-https://ui.shadcn.com/
-https://tailark.com/
-https://reui.io/
-https://shadcnstudio.com/
-https://uipub.com/pure-ui
-https://www.shadcnblocks.com/
-https://www.shadcn-ui-blocks.com/
+Replace @tabler/icons-react with Lucide-react
 
 Zustand for tracking curr. org context?
 Show currently selected org (&orgsettings active page) with marker
