@@ -1,6 +1,29 @@
-import { IconDots, IconLifebuoy, IconLogout, IconSettings } from "@tabler/icons-react";
+import { IconDots, IconLifebuoy, IconLogout, IconPlus, IconSelector, IconSettings } from "@tabler/icons-react";
 import { Avatar, Menu, Text, UnstyledButton } from "@mantine/core";
 import classes from "./TeamButton.module.css";
+
+const ORGANIZATIONS = [
+  {
+    name: "Acme Corporation",
+    description: "Enterprise",
+    avatar: "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png",
+  },
+  {
+    name: "Arachne",
+    description: "Pro",
+    avatar: "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png",
+  },
+  {
+    name: "Sekiguchi",
+    description: "Enterprise",
+    avatar: "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png",
+  },
+  {
+    name: "Traxus",
+    description: "Enterprise",
+    avatar: "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png",
+  },
+];
 
 export function TeamButton() {
   return (
@@ -21,7 +44,7 @@ export function TeamButton() {
                 Enterprise
               </Text>
             </div>
-            <IconDots size={16} stroke={1.5} aria-hidden />
+            <IconSelector size={16} stroke={1.5} aria-hidden />
           </div>
         </UnstyledButton>
       </Menu.Target>
@@ -36,20 +59,23 @@ export function TeamButton() {
             />
             <div className={classes.teamInfo}>
               <Text fw={500} span>
-                Nancy Eggshacker
+                Acme Corporation
               </Text>
               <Text size="xs" c="dimmed" span>
-                neggshaker@mantine.dev
+                Enterprise
               </Text>
             </div>
           </div>
         </Menu.Label>
         <Menu.Divider />
-        <Menu.Label>User Options</Menu.Label>
-        <Menu.Item leftSection={<IconSettings size={16} stroke={1.5} />}>Account settings</Menu.Item>
-        <Menu.Item leftSection={<IconLifebuoy size={16} stroke={1.5} />}>Help Center</Menu.Item>
+        <Menu.Label>Authorized Organizations</Menu.Label>
+        {ORGANIZATIONS.map((organization) => (
+          <Menu.Item key={organization.name} leftSection={<Avatar src={organization.avatar} radius="none" />}>
+            {organization.name}
+          </Menu.Item>
+        ))}
         <Menu.Divider />
-        <Menu.Item leftSection={<IconLogout size={16} stroke={1.5} />}>Logout</Menu.Item>
+        <Menu.Item leftSection={<IconPlus size={16} stroke={1.5} />}>Add Organization</Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );

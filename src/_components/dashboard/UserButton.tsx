@@ -1,4 +1,4 @@
-import { IconDots, IconLifebuoy, IconLogout, IconSettings } from "@tabler/icons-react";
+import { IconDots, IconLifebuoy, IconLogout, IconPlus, IconSettings } from "@tabler/icons-react";
 import { Avatar, Menu, Text, UnstyledButton } from "@mantine/core";
 import classes from "./UserButton.module.css";
 
@@ -49,7 +49,7 @@ export function UserButton() {
         <Menu.Item leftSection={<IconSettings size={16} stroke={1.5} />}>Account settings</Menu.Item>
         <Menu.Item leftSection={<IconLifebuoy size={16} stroke={1.5} />}>Help Center</Menu.Item>
         <Menu.Divider />
-        <Menu.Item leftSection={<IconLogout size={16} stroke={1.5} />}>Logout</Menu.Item>
+        <Menu.Item leftSection={<IconPlus size={16} stroke={1.5} />}>Logout</Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );
